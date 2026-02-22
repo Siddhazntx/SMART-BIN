@@ -1,0 +1,91 @@
+# Node
+node_modules/
+dist/
+build/
+cache/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Bun
+bun.lockb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+*.sqlite3
+*.db
+
+# Virtual environment folders
+venv/
+env/
+
+# Environment files
+.env
+.env.*
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Arduino / PlatformIO / firmware build artifacts
+*.elf
+*.bin
+*.hex
+*.eep
+build/
+.pioenvs/
+
+# Images and received uploads (avoid large binary files in repo)
+**/received_images/
+
+# Misc
+*.pid
+*.seed
+
+"camera + api/received_images/*"
+
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
