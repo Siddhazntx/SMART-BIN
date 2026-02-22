@@ -16,12 +16,32 @@ An automated waste management system that uses computer vision and IoT to intell
 
 ## 🚀 Getting Started
 
-### 1. Hardware Setup
-- Flash the code in `camera/CameraWebServer` to your **ESP32-CAM**.
-- Connect the ultrasonic sensors using the logic in `distance + comm`.
-- Update your WiFi credentials in the `.ino` files.
+## 📡 Hardware & Communication
 
-### 2. Python API Setup
+This project utilizes a decentralized communication architecture using the **ESP-NOW protocol**, allowing the devices to talk to each other directly without a Wi-Fi router.
+
+### System Components:
+1.  **ESP32-CAM (Master/Vision Node):** Captures images for waste classification and sends data via ESP-NOW.
+2.  **ESP32 (Controller Node):** Connected to the **Ultrasonic Sensor** for fill-level detection and manages physical bin operations.
+3.  **Ultrasonic Sensor:** Monitors bin capacity in real-time.
+
+---
+
+## 🚀 Hardware Setup
+
+### 1. ESP-NOW Configuration
+- Both ESP devices must be on the same Wi-Fi channel.
+- Ensure you have the **MAC Address** of the receiver ESP programmed into the sender ESP's code.
+
+### 2. Flashing the Devices
+- **Vision Node:** Flash the code found in `/camera/CameraWebServer`.
+- **Sensor Node:** Flash the code found in `/distance + comm/ultrasonic-sensor`.
+
+### 3. Wiring
+- **Ultrasonic Sensor:** Trigger -> GPIO XX, Echo -> GPIO XX (check `ultrasonic-sensor.ino` for specific pins).
+- **Power:** Ensure both ESPs share a common ground if they are physically linked, though ESP-NOW works wirelessly.
+
+### 4. Python API Setup
 Navigate to the camera folder and install dependencies:
 ```bash
 cd "camera + api"
@@ -29,7 +49,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-### 3. Frontend setup
+### 5. Frontend setup
 ```
 cd Frontend/bin-bloom-vision-main
 npm install
